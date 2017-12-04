@@ -26,25 +26,29 @@ public class Queue {
         return first == null;
     }
 
+    public int dequeue(){
+        if(isEmpty()) throw new NoSuchElementException("Empty");
+        int item = first.item;
+        first = first.next;
+        n--;
+
+        if(isEmpty()) last = null;
+        System.out.println("dequeue "+ item);
+
+        return item;
+    }
+
     public void enqueue(int item){
         Node oldLast = last;
         last = new Node();
         last.item = item;
         last.next = null;
+        n++;
+
         if (isEmpty()) first = last;
         else oldLast.next = last;
-        n++;
-        System.out.println("enqueue "+ item);
-    }
 
-    public int dequeue(){
-        if(isEmpty()) throw new NoSuchElementException("Empty");
-        int item = first.item;
-        first = first.next;
-        if(isEmpty()) last = null;
-        n--;
-        System.out.println("dequeue "+ item);
-        return item;
+        System.out.println("enqueue "+ item);
     }
 
     public int peek(){

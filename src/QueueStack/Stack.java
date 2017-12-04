@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 public class Stack{
 
-    private int n ;
+    private int n;
     private Node first;
 
 
