@@ -3,42 +3,43 @@ package QueueStack;
 import java.util.NoSuchElementException;
 
 public class Queue {
+
     private int n;
     private Node first;
     private Node last;
 
-    private class Node{
+    private class Node {
         private int item;
         private Node next;
     }
 
-    public Queue(){
-        n = 0 ;
+    public Queue() {
+        n = 0;
         first = null;
         last = null;
     }
 
-    public int size(){
+    public int size() {
         return n;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return first == null;
     }
 
-    public int dequeue(){
-        if(isEmpty()) throw new NoSuchElementException("Empty");
+    public int dequeue() {
+        if (isEmpty()) throw new NoSuchElementException("Empty");
         int item = first.item;
         first = first.next;
         n--;
 
-        if(isEmpty()) last = null;
-        System.out.println("dequeue "+ item);
+        if (isEmpty()) last = null;
+        System.out.println("dequeue " + item);
 
         return item;
     }
 
-    public void enqueue(int item){
+    public void enqueue(int item) {
         Node oldLast = last;
         last = new Node();
         last.item = item;
@@ -48,16 +49,16 @@ public class Queue {
         if (isEmpty()) first = last;
         else oldLast.next = last;
 
-        System.out.println("enqueue "+ item);
+        System.out.println("enqueue " + item);
     }
 
-    public int peek(){
-        if(isEmpty()) throw new NoSuchElementException("empty");
-        System.out.print("PEEK "+ first.item);
+    public int peek() {
+        if (isEmpty()) throw new NoSuchElementException("empty");
+        System.out.print("PEEK " + first.item);
         return first.item;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Queue queue = new Queue();
 
         queue.enqueue(1);
