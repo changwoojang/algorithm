@@ -20,47 +20,26 @@ public class ArrayRightRotation {
         public int[] solution(int[] A, int K) {
 
             // write your code in Java SE 8
-            int[] emtpy = {};
+            int[] empty = {};
 
-            HashMap<Integer,Boolean> hashMap = new HashMap<Integer,Boolean>();
-
-            for(int i = 0 ; i < A.length; i++){
-                HashMap.put(new Integer(i),false);
-            }
             Arrays.sort(A);
-            S
+
             if(A == null){
-                return Collections.emptyList();
+                return empty;
             }
 
             if( K > A.length){
-
                 K = K % A.length;
-
             }
-
-
-
             int[] result = new int[A.length];
-
-
-
             for( int i =0; i < K ; i++){
-
                 result[i] = A[ A.length - K + i];
-
             }
-
             int j = 0;
-
             for( int i = K; i < A.length ; i++){
-
                 result[i] = A[j];
-
                 j++;
-
             }
-
             return result;
 
         }
