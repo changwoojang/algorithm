@@ -12,18 +12,18 @@ public class BubbleSort {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int a[] = new int[n];
-        for(int a_i=0; a_i < n; a_i++){
-            a[a_i] = in.nextInt();
+        for(int i=0; i < n; i++){
+            a[i] = in.nextInt();
         }
         int swap =0;
-        for(int a_i=0; a_i < n; a_i++){
-            for(int a_j =1 ; a_j < n-a_i; a_j++){
+        for(int i=0; i < n; i++){
+            for(int j =1 ; j < n-i; j++){
                 int temp;
-                if(a[a_j-1]>a[a_j]){
+                if(a[j-1]>a[j]){
                     swap++;
-                    temp = a[a_j-1];
-                    a[a_j-1] = a[a_j];
-                    a[a_j] = temp;
+                    temp = a[j-1];
+                    a[j-1] = a[j];
+                    a[j] = temp;
                 }
             }
         }
